@@ -1,3 +1,10 @@
+## [Unreleased]
+
+- 新增：模块资源目录增加 .nvmrc（Node 14）规范构建环境
+- 新增：支持接收 AI 自动文章投递（AiAutoArticle）并写入博客内容
+
+---
+
 ## 4.1.0
 
 - 新增：适配倒计时模块（Countdown）

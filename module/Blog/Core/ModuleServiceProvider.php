@@ -11,6 +11,7 @@ use ModStart\Core\Dao\ModelUtil;
 use ModStart\Layout\Row;
 use ModStart\Module\ModuleClassLoader;
 use Module\Banner\Biz\BannerPositionBiz;
+use Module\AiAutoArticle\Provider\AiAutoArticlePostBiz;
 use Module\Blog\Util\BlogCategoryUtil;
 use Module\Blog\Util\BlogUtil;
 use Module\Blog\Util\UrlUtil;
@@ -141,6 +142,10 @@ class ModuleServiceProvider extends ServiceProvider
         ContentVerifyBiz::register(BlogCommentContentVerifyBiz::class);
         NotifierBiz::registerQuick('Blog_Message', '博客留言审核');
         NotifierBiz::registerQuick('Blog_Comment', '博客评论审核');
+
+        if (modstart_module_enabled('AiAutoArticle')) {
+            AiAutoArticlePostBiz::register(BlogPostBiz::class);
+        }
     }
 
     /**

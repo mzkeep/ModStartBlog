@@ -62,11 +62,7 @@
     <div class="ub-panel transparent">
         <div class="head">
             <div class="title">
-                ub-dashboard-item-a
-                /
-                ub-dashboard-item-b
-                /
-                ub-dashboard-item-c
+                .ub-dashboard-item-a .ub-dashboard-item-b .ub-dashboard-item-c
             </div>
         </div>
         <div class="body">
@@ -115,13 +111,21 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-3" data-repeat="4">
+                    <a href="#" class="ub-dashboard-item-c">
+                        <div class="number-value">{NUM,1000,9999}</div>
+                        <div class="number-title">{ZH,4,6}</div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="block-breaker"></div>
     <div class="ub-panel">
         <div class="head">
             <div class="title">
-                样式
+                .ub-panel.ub-dashboard-item
             </div>
         </div>
         <div class="body">
@@ -143,7 +147,7 @@
     <div class="ub-panel">
         <div class="head">
             <div class="title">
-                样式
+                .ub-panel.ub-text-left
             </div>
         </div>
         <div class="body">

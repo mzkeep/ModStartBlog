@@ -6,6 +6,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    border-radius: var(--size-radius-sm);
+    transition: transform 0.5s var(--ease-out);
 
     &:after {
         content: '';
@@ -16,8 +18,18 @@
         background-size: contain;
     }
 
+    &.bg {
+        background-color: var(--color-body-block-bg);
+    }
+
     &.circle {
         border-radius: 50%;
+    }
+
+    // 悬停放大（可选）：放在 overflow:hidden 的父容器内使用，避免溢出
+    &.hover,
+    a:hover > & {
+        transform: scale(1.04);
     }
 }
 

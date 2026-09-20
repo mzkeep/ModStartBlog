@@ -8,13 +8,7 @@
 @section('headAppend')
     @parent
     @if($c=modstart_config('sitePrimaryColor'))
-        <style type="text/css">
-            :root{
-                --theme-color-primary: {{$c}};
-                --theme-color-primary-light: {{\ModStart\Core\Util\ColorUtil::adjust($c,20)}};
-                --theme-color-primary-dark: {{\ModStart\Core\Util\ColorUtil::adjust($c,-20)}};
-            }
-        </style>
+        <style type="text/css">{!! \ModStart\Core\Util\ColorUtil::primaryColorCss($c) !!}</style>
     @endif
     {!! \ModStart\Core\Hook\ModStartHook::fireInView('PageHeadAppend',$this); !!}
 @endsection
