@@ -47,6 +47,9 @@ class BlogMemberLikeBiz extends AbstractMemberLikeBiz
     public function memberGridItem($item)
     {
         $record = ModelUtil::get('blog', $item['bizId']);
+        if (empty($record)) {
+            return htmlspecialchars('[已删除博客]');
+        }
         return TextLink::primary(htmlspecialchars($record['title']),
             UrlUtil::blog($record), 'target="_blank"');
     }
