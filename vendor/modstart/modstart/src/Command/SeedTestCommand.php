@@ -34,6 +34,9 @@ class SeedTestCommand extends Command
 
     public function handle()
     {
+        // 全量测试（尤其 UI 阶段的真实浏览器交互）耗时可能超过 CLI 默认执行上限，
+        // 这里显式取消执行时间限制，避免测试被 60 秒上限中断
+        @set_time_limit(0);
         // 同一时间只允许一个 seed-test 运行，避免并发操作数据库互相干扰
         if (!$this->acquireRunLock()) {
             return 1;
@@ -225,9 +228,35 @@ class SeedTestCommand extends Command
         }
         // 再运行各模块测试目录
         foreach ($modules as $module) {
+            // Seed 阶段：模块测试种子只认单文件 module/<Module>/Test/Seed.php（不扫描目录）
+            if ('Seed' === $moduleDir) {
+                $this->runSeedFile($module);
+                continue;
+            }
             $modulePath = ModuleManager::path($module, 'Test/' . $moduleDir);
             $this->runFilesInDir($modulePath);
         }
+    }
+
+    /**
+     * 运行模块单文件测试种子 Test/Seed.php（Seed 阶段唯一位置）
+     *
+     * @param string $module 模块标识
+     */
+    private function runSeedFile($module)
+    {
+        $file = ModuleManager::path($module, 'Test/Seed.php');
+        if (!is_file($file)) {
+            return;
+        }
+        if ('' !== $this->fileFilter) {
+            $relativePath = str_replace(base_path('/'), '', $file);
+            if (stripos($relativePath, $this->fileFilter) === false
+                && stripos(basename($file), $this->fileFilter) === false) {
+                return;
+            }
+        }
+        $this->runFile($file);
     }
 
     /**

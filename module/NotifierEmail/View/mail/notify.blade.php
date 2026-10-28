@@ -8,7 +8,7 @@
             @foreach($content as $name=>$value)
                 <tr>
                     <td width="140"><b>{{$name}}</b></td>
-                    <td style="word-break:break-all;">{{$value}}</td>
+                    <td style="word-break:break-all;">{!! \ModStart\Core\Util\HtmlUtil::htmlSimpleRich(e($value)) !!}</td>
                 </tr>
             @endforeach
         </table>

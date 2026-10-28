@@ -1,3 +1,10 @@
+## [Unreleased]
+
+- 新增：模块 README 集成说明（module/Partner/README.md，其他系统集成先读此文件）
+- 优化：测试种子统一为单文件 Test/Seed.php
+
+---
+
 ## 1.8.2 多语言管理菜单显示优化
 
 - 优化：多语言管理菜单显示优化

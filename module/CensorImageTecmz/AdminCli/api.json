@@ -1,0 +1,28 @@
+{
+    "module": "CensorImageTecmz",
+    "title": "魔众图片智能审核",
+    "apis": [
+        {
+            "key": "censor_image_tecmz.config",
+            "title": "魔众图片智能审核 配置",
+            "method": "post",
+            "url": "censor_image_tecmz/config",
+            "scope": "censor_image_tecmz.write",
+            "permission": "\\Module\\CensorImageTecmz\\Admin\\Controller\\ConfigController@index",
+            "params": [
+                {
+                    "name": "CensorImageTecmz_AppId",
+                    "type": "string",
+                    "required": false,
+                    "desc": "CensorImageTecmz_AppId"
+                },
+                {
+                    "name": "CensorImageTecmz_AppSecret",
+                    "type": "string",
+                    "required": false,
+                    "desc": "CensorImageTecmz_AppSecret"
+                }
+            ]
+        }
+    ]
+}

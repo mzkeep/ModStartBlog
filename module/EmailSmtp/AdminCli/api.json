@@ -1,0 +1,64 @@
+{
+    "module": "EmailSmtp",
+    "title": "SMTP邮箱",
+    "apis": [
+        {
+            "key": "email_smtp.config",
+            "title": "SMTP邮箱 配置",
+            "method": "post",
+            "url": "email_smtp/config",
+            "scope": "email_smtp.write",
+            "permission": "Module\\EmailSmtp\\Admin\\Controller\\ConfigController@setting",
+            "params": [
+                {
+                    "name": "systemEmailEnable",
+                    "type": "string",
+                    "required": false,
+                    "desc": "systemEmailEnable"
+                },
+                {
+                    "name": "systemEmailSmtpServer",
+                    "type": "string",
+                    "required": false,
+                    "desc": "systemEmailSmtpServer"
+                },
+                {
+                    "name": "systemEmailSmtpSsl",
+                    "type": "string",
+                    "required": false,
+                    "desc": "systemEmailSmtpSsl"
+                },
+                {
+                    "name": "systemEmailSmtpUser",
+                    "type": "string",
+                    "required": false,
+                    "desc": "systemEmailSmtpUser"
+                },
+                {
+                    "name": "systemEmailSmtpPassword",
+                    "type": "string",
+                    "required": false,
+                    "desc": "systemEmailSmtpPassword"
+                },
+                {
+                    "name": "EmailSmtp_FromName",
+                    "type": "string",
+                    "required": false,
+                    "desc": "EmailSmtp_FromName"
+                },
+                {
+                    "name": "EmailSmtp_FromEmail",
+                    "type": "string",
+                    "required": false,
+                    "desc": "EmailSmtp_FromEmail"
+                },
+                {
+                    "name": "_test_email_",
+                    "type": "string",
+                    "required": false,
+                    "desc": "_test_email_"
+                }
+            ]
+        }
+    ]
+}

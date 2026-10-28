@@ -1,0 +1,28 @@
+{
+    "module": "CensorTextTecmz",
+    "title": "魔众文本智能审核",
+    "apis": [
+        {
+            "key": "censor_text_tecmz.config",
+            "title": "魔众文本智能审核 配置",
+            "method": "post",
+            "url": "censor_text_tecmz/config",
+            "scope": "censor_text_tecmz.write",
+            "permission": "\\Module\\CensorTextTecmz\\Admin\\Controller\\ConfigController@index",
+            "params": [
+                {
+                    "name": "CensorTextTecmz_AppId",
+                    "type": "string",
+                    "required": false,
+                    "desc": "CensorTextTecmz_AppId"
+                },
+                {
+                    "name": "CensorTextTecmz_AppSecret",
+                    "type": "string",
+                    "required": false,
+                    "desc": "CensorTextTecmz_AppSecret"
+                }
+            ]
+        }
+    ]
+}

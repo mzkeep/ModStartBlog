@@ -1,0 +1,972 @@
+{
+    "module": "Blog",
+    "title": "博客系统",
+    "apis": [
+        {
+            "key": "blog.config",
+            "title": "博客系统 配置",
+            "method": "post",
+            "url": "blog/config",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\ConfigController@index",
+            "params": [
+                {
+                    "name": "Blog_SeoTitle",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_SeoTitle"
+                },
+                {
+                    "name": "Blog_SeoKeywords",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_SeoKeywords"
+                },
+                {
+                    "name": "Blog_SeoDescription",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_SeoDescription"
+                },
+                {
+                    "name": "Blog_Name",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_Name"
+                },
+                {
+                    "name": "Blog_Slogan",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_Slogan"
+                },
+                {
+                    "name": "Blog_Avatar",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_Avatar"
+                },
+                {
+                    "name": "Blog_ContactQQ",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_ContactQQ"
+                },
+                {
+                    "name": "Blog_ContactWeibo",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_ContactWeibo"
+                },
+                {
+                    "name": "Blog_ContactWechat",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_ContactWechat"
+                },
+                {
+                    "name": "Blog_PanelTagLimit",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_PanelTagLimit"
+                },
+                {
+                    "name": "Blog_DarkModeEnable",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_DarkModeEnable"
+                },
+                {
+                    "name": "Blog_DarkModeType",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_DarkModeType"
+                },
+                {
+                    "name": "Blog_BlogSuperSearchProvider",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_BlogSuperSearchProvider"
+                },
+                {
+                    "name": "Blog_CommentEnable",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_CommentEnable"
+                },
+                {
+                    "name": "Blog_ContentNavEnable",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_ContentNavEnable"
+                },
+                {
+                    "name": "Blog_CommentVerifyEnable",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_CommentVerifyEnable"
+                },
+                {
+                    "name": "Blog_MessageVerifyEnable",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_MessageVerifyEnable"
+                },
+                {
+                    "name": "Blog_Censor_Image",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_Censor_Image"
+                },
+                {
+                    "name": "Blog_Censor_Text",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_Censor_Text"
+                },
+                {
+                    "name": "Blog_BlogCaptchaProvider",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_BlogCaptchaProvider"
+                },
+                {
+                    "name": "Blog_MessageCaptchaProvider",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_MessageCaptchaProvider"
+                },
+                {
+                    "name": "Blog_AboutContent",
+                    "type": "string",
+                    "required": false,
+                    "desc": "Blog_AboutContent"
+                }
+            ]
+        },
+        {
+            "key": "blog.message.index",
+            "title": "博客系统 列表",
+            "method": "post",
+            "url": "blog/message/index",
+            "scope": "blog.read",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogMessageController@index",
+            "params": [
+                {
+                    "name": "page",
+                    "type": "int",
+                    "required": false,
+                    "desc": "页码"
+                },
+                {
+                    "name": "pageSize",
+                    "type": "int",
+                    "required": false,
+                    "desc": "每页数量"
+                },
+                {
+                    "name": "keyword",
+                    "type": "string",
+                    "required": false,
+                    "desc": "关键词"
+                }
+            ]
+        },
+        {
+            "key": "blog.message.add",
+            "title": "博客系统 新增",
+            "method": "post",
+            "url": "blog/message/add",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogMessageController@add",
+            "params": [
+                {
+                    "name": "username",
+                    "type": "string",
+                    "required": false,
+                    "desc": "username"
+                },
+                {
+                    "name": "email",
+                    "type": "string",
+                    "required": false,
+                    "desc": "email"
+                },
+                {
+                    "name": "url",
+                    "type": "string",
+                    "required": false,
+                    "desc": "url"
+                },
+                {
+                    "name": "content",
+                    "type": "string",
+                    "required": false,
+                    "desc": "content"
+                },
+                {
+                    "name": "upCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "upCount"
+                },
+                {
+                    "name": "downCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "downCount"
+                },
+                {
+                    "name": "reply",
+                    "type": "string",
+                    "required": false,
+                    "desc": "reply"
+                },
+                {
+                    "name": "memberUserId",
+                    "type": "string",
+                    "required": false,
+                    "desc": "memberUserId"
+                },
+                {
+                    "name": "status",
+                    "type": "string",
+                    "required": false,
+                    "desc": "status"
+                }
+            ]
+        },
+        {
+            "key": "blog.message.edit",
+            "title": "博客系统 编辑",
+            "method": "post",
+            "url": "blog/message/edit",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogMessageController@edit",
+            "params": [
+                {
+                    "name": "id",
+                    "type": "int",
+                    "required": true,
+                    "desc": "记录ID"
+                },
+                {
+                    "name": "username",
+                    "type": "string",
+                    "required": false,
+                    "desc": "username"
+                },
+                {
+                    "name": "email",
+                    "type": "string",
+                    "required": false,
+                    "desc": "email"
+                },
+                {
+                    "name": "url",
+                    "type": "string",
+                    "required": false,
+                    "desc": "url"
+                },
+                {
+                    "name": "content",
+                    "type": "string",
+                    "required": false,
+                    "desc": "content"
+                },
+                {
+                    "name": "upCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "upCount"
+                },
+                {
+                    "name": "downCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "downCount"
+                },
+                {
+                    "name": "reply",
+                    "type": "string",
+                    "required": false,
+                    "desc": "reply"
+                },
+                {
+                    "name": "memberUserId",
+                    "type": "string",
+                    "required": false,
+                    "desc": "memberUserId"
+                },
+                {
+                    "name": "status",
+                    "type": "string",
+                    "required": false,
+                    "desc": "status"
+                }
+            ]
+        },
+        {
+            "key": "blog.message.delete",
+            "title": "博客系统 删除",
+            "method": "post",
+            "url": "blog/message/delete",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogMessageController@delete",
+            "params": [
+                {
+                    "name": "ids",
+                    "type": "string",
+                    "required": true,
+                    "desc": "记录ID，多个用逗号分隔"
+                }
+            ]
+        },
+        {
+            "key": "blog.index",
+            "title": "博客系统 列表",
+            "method": "post",
+            "url": "blog/index",
+            "scope": "blog.read",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogController@index",
+            "params": [
+                {
+                    "name": "page",
+                    "type": "int",
+                    "required": false,
+                    "desc": "页码"
+                },
+                {
+                    "name": "pageSize",
+                    "type": "int",
+                    "required": false,
+                    "desc": "每页数量"
+                },
+                {
+                    "name": "keyword",
+                    "type": "string",
+                    "required": false,
+                    "desc": "关键词"
+                }
+            ]
+        },
+        {
+            "key": "blog.add",
+            "title": "博客系统 新增",
+            "method": "post",
+            "url": "blog/add",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogController@add",
+            "params": [
+                {
+                    "name": "title",
+                    "type": "string",
+                    "required": false,
+                    "desc": "title"
+                },
+                {
+                    "name": "tag",
+                    "type": "string",
+                    "required": false,
+                    "desc": "tag"
+                },
+                {
+                    "name": "summary",
+                    "type": "string",
+                    "required": false,
+                    "desc": "summary"
+                },
+                {
+                    "name": "images",
+                    "type": "string",
+                    "required": false,
+                    "desc": "images"
+                },
+                {
+                    "name": "content",
+                    "type": "string",
+                    "required": false,
+                    "desc": "content"
+                },
+                {
+                    "name": "seoKeywords",
+                    "type": "string",
+                    "required": false,
+                    "desc": "seoKeywords"
+                },
+                {
+                    "name": "seoDescription",
+                    "type": "string",
+                    "required": false,
+                    "desc": "seoDescription"
+                },
+                {
+                    "name": "isPublished",
+                    "type": "string",
+                    "required": false,
+                    "desc": "isPublished"
+                },
+                {
+                    "name": "postTime",
+                    "type": "string",
+                    "required": false,
+                    "desc": "postTime"
+                },
+                {
+                    "name": "clickCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "clickCount"
+                },
+                {
+                    "name": "isTop",
+                    "type": "string",
+                    "required": false,
+                    "desc": "isTop"
+                },
+                {
+                    "name": "commentCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "commentCount"
+                },
+                {
+                    "name": "categoryId",
+                    "type": "string",
+                    "required": false,
+                    "desc": "categoryId"
+                },
+                {
+                    "name": "templateView",
+                    "type": "string",
+                    "required": false,
+                    "desc": "templateView"
+                },
+                {
+                    "name": "isHot",
+                    "type": "string",
+                    "required": false,
+                    "desc": "isHot"
+                },
+                {
+                    "name": "isRecommend",
+                    "type": "string",
+                    "required": false,
+                    "desc": "isRecommend"
+                },
+                {
+                    "name": "visitMode",
+                    "type": "string",
+                    "required": false,
+                    "desc": "visitMode"
+                },
+                {
+                    "name": "visitPassword",
+                    "type": "string",
+                    "required": false,
+                    "desc": "visitPassword"
+                },
+                {
+                    "name": "likeCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "likeCount"
+                },
+                {
+                    "name": "favCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "favCount"
+                }
+            ]
+        },
+        {
+            "key": "blog.edit",
+            "title": "博客系统 编辑",
+            "method": "post",
+            "url": "blog/edit",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogController@edit",
+            "params": [
+                {
+                    "name": "id",
+                    "type": "int",
+                    "required": true,
+                    "desc": "记录ID"
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "required": false,
+                    "desc": "title"
+                },
+                {
+                    "name": "tag",
+                    "type": "string",
+                    "required": false,
+                    "desc": "tag"
+                },
+                {
+                    "name": "summary",
+                    "type": "string",
+                    "required": false,
+                    "desc": "summary"
+                },
+                {
+                    "name": "images",
+                    "type": "string",
+                    "required": false,
+                    "desc": "images"
+                },
+                {
+                    "name": "content",
+                    "type": "string",
+                    "required": false,
+                    "desc": "content"
+                },
+                {
+                    "name": "seoKeywords",
+                    "type": "string",
+                    "required": false,
+                    "desc": "seoKeywords"
+                },
+                {
+                    "name": "seoDescription",
+                    "type": "string",
+                    "required": false,
+                    "desc": "seoDescription"
+                },
+                {
+                    "name": "isPublished",
+                    "type": "string",
+                    "required": false,
+                    "desc": "isPublished"
+                },
+                {
+                    "name": "postTime",
+                    "type": "string",
+                    "required": false,
+                    "desc": "postTime"
+                },
+                {
+                    "name": "clickCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "clickCount"
+                },
+                {
+                    "name": "isTop",
+                    "type": "string",
+                    "required": false,
+                    "desc": "isTop"
+                },
+                {
+                    "name": "commentCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "commentCount"
+                },
+                {
+                    "name": "categoryId",
+                    "type": "string",
+                    "required": false,
+                    "desc": "categoryId"
+                },
+                {
+                    "name": "templateView",
+                    "type": "string",
+                    "required": false,
+                    "desc": "templateView"
+                },
+                {
+                    "name": "isHot",
+                    "type": "string",
+                    "required": false,
+                    "desc": "isHot"
+                },
+                {
+                    "name": "isRecommend",
+                    "type": "string",
+                    "required": false,
+                    "desc": "isRecommend"
+                },
+                {
+                    "name": "visitMode",
+                    "type": "string",
+                    "required": false,
+                    "desc": "visitMode"
+                },
+                {
+                    "name": "visitPassword",
+                    "type": "string",
+                    "required": false,
+                    "desc": "visitPassword"
+                },
+                {
+                    "name": "likeCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "likeCount"
+                },
+                {
+                    "name": "favCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "favCount"
+                }
+            ]
+        },
+        {
+            "key": "blog.delete",
+            "title": "博客系统 删除",
+            "method": "post",
+            "url": "blog/delete",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogController@delete",
+            "params": [
+                {
+                    "name": "ids",
+                    "type": "string",
+                    "required": true,
+                    "desc": "记录ID，多个用逗号分隔"
+                }
+            ]
+        },
+        {
+            "key": "blog.comment.index",
+            "title": "博客系统 列表",
+            "method": "post",
+            "url": "blog/comment/index",
+            "scope": "blog.read",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogCommentController@index",
+            "params": [
+                {
+                    "name": "page",
+                    "type": "int",
+                    "required": false,
+                    "desc": "页码"
+                },
+                {
+                    "name": "pageSize",
+                    "type": "int",
+                    "required": false,
+                    "desc": "每页数量"
+                },
+                {
+                    "name": "keyword",
+                    "type": "string",
+                    "required": false,
+                    "desc": "关键词"
+                }
+            ]
+        },
+        {
+            "key": "blog.comment.add",
+            "title": "博客系统 新增",
+            "method": "post",
+            "url": "blog/comment/add",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogCommentController@add",
+            "params": [
+                {
+                    "name": "blogId",
+                    "type": "string",
+                    "required": false,
+                    "desc": "blogId"
+                },
+                {
+                    "name": "username",
+                    "type": "string",
+                    "required": false,
+                    "desc": "username"
+                },
+                {
+                    "name": "email",
+                    "type": "string",
+                    "required": false,
+                    "desc": "email"
+                },
+                {
+                    "name": "url",
+                    "type": "string",
+                    "required": false,
+                    "desc": "url"
+                },
+                {
+                    "name": "content",
+                    "type": "string",
+                    "required": false,
+                    "desc": "content"
+                },
+                {
+                    "name": "memberUserId",
+                    "type": "string",
+                    "required": false,
+                    "desc": "memberUserId"
+                },
+                {
+                    "name": "status",
+                    "type": "string",
+                    "required": false,
+                    "desc": "status"
+                }
+            ]
+        },
+        {
+            "key": "blog.comment.edit",
+            "title": "博客系统 编辑",
+            "method": "post",
+            "url": "blog/comment/edit",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogCommentController@edit",
+            "params": [
+                {
+                    "name": "id",
+                    "type": "int",
+                    "required": true,
+                    "desc": "记录ID"
+                },
+                {
+                    "name": "blogId",
+                    "type": "string",
+                    "required": false,
+                    "desc": "blogId"
+                },
+                {
+                    "name": "username",
+                    "type": "string",
+                    "required": false,
+                    "desc": "username"
+                },
+                {
+                    "name": "email",
+                    "type": "string",
+                    "required": false,
+                    "desc": "email"
+                },
+                {
+                    "name": "url",
+                    "type": "string",
+                    "required": false,
+                    "desc": "url"
+                },
+                {
+                    "name": "content",
+                    "type": "string",
+                    "required": false,
+                    "desc": "content"
+                },
+                {
+                    "name": "memberUserId",
+                    "type": "string",
+                    "required": false,
+                    "desc": "memberUserId"
+                },
+                {
+                    "name": "status",
+                    "type": "string",
+                    "required": false,
+                    "desc": "status"
+                }
+            ]
+        },
+        {
+            "key": "blog.comment.delete",
+            "title": "博客系统 删除",
+            "method": "post",
+            "url": "blog/comment/delete",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogCommentController@delete",
+            "params": [
+                {
+                    "name": "ids",
+                    "type": "string",
+                    "required": true,
+                    "desc": "记录ID，多个用逗号分隔"
+                }
+            ]
+        },
+        {
+            "key": "blog.category.index",
+            "title": "博客系统 列表",
+            "method": "post",
+            "url": "blog/category/index",
+            "scope": "blog.read",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogCategoryController@index",
+            "params": [
+                {
+                    "name": "page",
+                    "type": "int",
+                    "required": false,
+                    "desc": "页码"
+                },
+                {
+                    "name": "pageSize",
+                    "type": "int",
+                    "required": false,
+                    "desc": "每页数量"
+                },
+                {
+                    "name": "keyword",
+                    "type": "string",
+                    "required": false,
+                    "desc": "关键词"
+                }
+            ]
+        },
+        {
+            "key": "blog.category.add",
+            "title": "博客系统 新增",
+            "method": "post",
+            "url": "blog/category/add",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogCategoryController@add",
+            "params": [
+                {
+                    "name": "pid",
+                    "type": "string",
+                    "required": false,
+                    "desc": "pid"
+                },
+                {
+                    "name": "sort",
+                    "type": "string",
+                    "required": false,
+                    "desc": "sort"
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "required": false,
+                    "desc": "title"
+                },
+                {
+                    "name": "blogCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "blogCount"
+                },
+                {
+                    "name": "cover",
+                    "type": "string",
+                    "required": false,
+                    "desc": "cover"
+                },
+                {
+                    "name": "keywords",
+                    "type": "string",
+                    "required": false,
+                    "desc": "keywords"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "required": false,
+                    "desc": "description"
+                },
+                {
+                    "name": "templateView",
+                    "type": "string",
+                    "required": false,
+                    "desc": "templateView"
+                }
+            ]
+        },
+        {
+            "key": "blog.category.edit",
+            "title": "博客系统 编辑",
+            "method": "post",
+            "url": "blog/category/edit",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogCategoryController@edit",
+            "params": [
+                {
+                    "name": "id",
+                    "type": "int",
+                    "required": true,
+                    "desc": "记录ID"
+                },
+                {
+                    "name": "pid",
+                    "type": "string",
+                    "required": false,
+                    "desc": "pid"
+                },
+                {
+                    "name": "sort",
+                    "type": "string",
+                    "required": false,
+                    "desc": "sort"
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "required": false,
+                    "desc": "title"
+                },
+                {
+                    "name": "blogCount",
+                    "type": "string",
+                    "required": false,
+                    "desc": "blogCount"
+                },
+                {
+                    "name": "cover",
+                    "type": "string",
+                    "required": false,
+                    "desc": "cover"
+                },
+                {
+                    "name": "keywords",
+                    "type": "string",
+                    "required": false,
+                    "desc": "keywords"
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "required": false,
+                    "desc": "description"
+                },
+                {
+                    "name": "templateView",
+                    "type": "string",
+                    "required": false,
+                    "desc": "templateView"
+                }
+            ]
+        },
+        {
+            "key": "blog.category.delete",
+            "title": "博客系统 删除",
+            "method": "post",
+            "url": "blog/category/delete",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogCategoryController@delete",
+            "params": [
+                {
+                    "name": "ids",
+                    "type": "string",
+                    "required": true,
+                    "desc": "记录ID，多个用逗号分隔"
+                }
+            ]
+        },
+        {
+            "key": "blog.category.sort",
+            "title": "博客系统 排序",
+            "method": "post",
+            "url": "blog/category/sort",
+            "scope": "blog.write",
+            "permission": "\\Module\\Blog\\Admin\\Controller\\BlogCategoryController@sort",
+            "params": [
+                {
+                    "name": "ids",
+                    "type": "string",
+                    "required": true,
+                    "desc": "记录ID，按目标顺序用逗号分隔"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "module": "NotifierEmail",
+    "title": "邮件消息通知",
+    "apis": [
+        {
+            "key": "notifier_email.config",
+            "title": "邮件消息通知 配置",
+            "method": "post",
+            "url": "notifier_email/config",
+            "scope": "notifier_email.write",
+            "permission": "Module\\NotifierEmail\\Admin\\Controller\\ConfigController@setting",
+            "params": [
+                {
+                    "name": "NotifierEmail_Enable",
+                    "type": "string",
+                    "required": false,
+                    "desc": "NotifierEmail_Enable"
+                },
+                {
+                    "name": "NotifierEmail_DefaultEmail",
+                    "type": "string",
+                    "required": false,
+                    "desc": "NotifierEmail_DefaultEmail"
+                },
+                {
+                    "name": "NotifierEmail_Biz_",
+                    "type": "string",
+                    "required": false,
+                    "desc": "NotifierEmail_Biz_"
+                }
+            ]
+        }
+    ]
+}
