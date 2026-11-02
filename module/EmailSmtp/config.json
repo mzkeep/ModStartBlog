@@ -3,7 +3,8 @@
     "title": "SMTP邮箱",
     "env": [
         "laravel5",
-        "laravel9"
+        "laravel9",
+        "laravel13"
     ],
     "require": [
         "Vendor:>=1.7.0"

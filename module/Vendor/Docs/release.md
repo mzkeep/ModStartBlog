@@ -1,3 +1,21 @@
+## [Unreleased]
+
+- 修复：phpQuery 与 BladeTailwindInject 命令在 PHP 8 下的兼容问题（create_function 移除、花括号字符串偏移、split 移除、Process 需数组参数）
+- 新增：支持 Laravel 13 / PHP 8.5，config.json 环境声明新增 laravel13
+- 修复：PHP 8.1 起将 null 隐式转为字符串已废弃，请求头取值统一经 strval()
+- 修复：字符串插值 ${var} 写法在 PHP 8.2 起废弃，统一改为 {$var}
+- 修复：PHP 8.4 起 fgetcsv()/fputcsv() 要求显式传入 $escape 参数
+
+---
+
+## 5.4.1 邮件框架深色模式适配与页脚提示可覆盖
+
+- 优化：邮件框架新增 `prefers-color-scheme` 深色模式适配与 `color-scheme` 声明，深色客户端下卡片、正文、表格、页脚自动反色
+- 优化：邮件框架页脚提示支持子模板通过 `@section('footerNote')` 覆盖（默认仍为「此邮件由系统自动发送，请勿直接回复」）
+- 优化：邮件框架头部站点名未配置时回退显示站点域名，避免邮件头部空白
+
+---
+
 ## 5.4.0 新增内置微信用户管理接口与主题演示数据种子工具
 
 - 新增：模块 README 集成说明（module/Vendor/README.md，其他系统集成先读此文件）

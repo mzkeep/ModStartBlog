@@ -5,6 +5,7 @@
 - 优化：多语言管理菜单显示优化
 - 优化：测试种子统一为单文件 module/VisitStatistic/Test/Seed.php
 - 优化：预览截图脚本迁移到 module/VisitStatistic/Test/ScreenShot.php，截图产物统一输出到 Temp/ScreenShotImage 目录
+- 新增：支持 Laravel 13 / PHP 8.5，config.json 环境声明新增 laravel13
 
 ---
 

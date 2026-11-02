@@ -6,6 +6,7 @@
 - 优化：截图脚本迁移到 Test/ScreenShot.php，截图产物输出到 Temp/ScreenShotImage
 - 优化：邮件通知内容中的链接自动渲染为可点击链接
 - 优化：多语言管理菜单显示优化
+- 新增：支持 Laravel 13 / PHP 8.5，config.json 环境声明新增 laravel13
 
 ---
 

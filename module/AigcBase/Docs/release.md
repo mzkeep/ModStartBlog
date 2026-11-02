@@ -10,6 +10,7 @@
 - 优化：文案「声音克隆」统一调整为「声音复刻」
 
 - 修复：移除指向不存在 FileController 的死路由，修复 /api/aigc_base/file 报错
+- 新增：支持 Laravel 13 / PHP 8.5，config.json 环境声明新增 laravel13
 
 ---
 

@@ -2,6 +2,7 @@
 
 - 新增：模块 README 集成说明（module/Blog/README.md，其他系统集成先读此文件）
 - 优化：测试种子统一为单文件 Test/Seed.php
+- 新增：支持 Laravel 13 / PHP 8.5，config.json 环境声明新增 laravel13
 
 ---
 

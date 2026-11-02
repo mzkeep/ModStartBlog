@@ -20,7 +20,6 @@
 | `Asset/` | 静态资源 |
 | `Core/` | 模块服务提供者（菜单 / 事件 / 业务注册） |
 | `Docs/` | 文档 |
-| `Temp/` | 截图产物与临时素材（打包排除） |
 | `Test/` | 测试与演示数据 |
 | `View/` | Blade 模板 |
 | `Web/` | 前台控制器与路由 |
@@ -36,7 +35,7 @@
 
 - Api 测试：`Test/Api/`
 - Biz 测试：`Test/Biz/`
-- 截图脚本：`Test/ScreenShot.php`（产物 `Temp/ScreenShotImage/pc.<page>.png`）
+- 截图脚本：`Test/ScreenShot.php`
 
 ## 文档索引
 

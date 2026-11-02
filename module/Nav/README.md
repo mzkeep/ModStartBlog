@@ -21,7 +21,6 @@
 | `Docs/` | 文档 |
 | `Migrate/` | 数据库迁移 |
 | `Model/` | 数据模型 |
-| `Temp/` | 截图产物与临时素材（打包排除） |
 | `Test/` | 测试与演示数据 |
 | `Type/` | 类型定义 |
 | `Util/` | 工具类 |
@@ -38,7 +37,7 @@
 - 演示 / 测试数据：`Test/Seed.php`
 - Api 测试：`Test/Api/`
 - Biz 测试：`Test/Biz/`
-- 截图脚本：`Test/ScreenShot.php`（产物 `Temp/ScreenShotImage/pc.<page>.png`）
+- 截图脚本：`Test/ScreenShot.php`
 
 ## 文档索引
 

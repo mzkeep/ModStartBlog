@@ -214,6 +214,9 @@ class TestCase
             // describe 内注册的 test 在注册时立即执行（见 self::test）
         } catch (\Exception $e) {
             TestContext::fail($name, 'describe error: ' . $e->getMessage());
+        } catch (\Throwable $e) {
+            // PHP 7+ 的 TypeError / Error 不能中断整个测试进程；PHP 5.6 下该 catch 永不命中
+            TestContext::fail($name, 'describe error: ' . $e->getMessage());
         }
         self::$currentGroup = $prevGroup;
         self::$beforeEach = $prevBeforeEach;
@@ -251,6 +254,9 @@ class TestCase
             }
             call_user_func($callback, new static());
         } catch (\Exception $e) {
+            TestContext::fail($fullName, $e->getMessage());
+        } catch (\Throwable $e) {
+            // PHP 7+ 的 TypeError / Error 只让当前用例失败；PHP 5.6 下该 catch 永不命中
             TestContext::fail($fullName, $e->getMessage());
         }
     }
